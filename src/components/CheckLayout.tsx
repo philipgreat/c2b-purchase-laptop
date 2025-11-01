@@ -8,7 +8,7 @@ import {
   Divider,
 } from '@mui/material';
 import LockIcon from '@mui/icons-material/Lock';
-
+import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 const CheckTemplate = () => {
   return (
     <Box
@@ -93,17 +93,12 @@ const CheckTemplate = () => {
       {/* Dollars and Security Icon */}
       
 
-      <Divider sx={{ my: 2 }} />
+      
 
       {/* Bank Info */}
       <Grid container alignItems="center" spacing={2}>
         <Grid >
-          <Box
-            component="img"
-            src="https://placehold.co/40x40?text=🌍"
-            alt="Bank Logo - globe icon"
-            sx={{ borderRadius: '50%' }}
-          />
+         <AccountBalanceIcon fontSize="large" color="primary" />
         </Grid>
         <Grid >
           <Typography variant="h6">BANK OF THE WORLD</Typography>
