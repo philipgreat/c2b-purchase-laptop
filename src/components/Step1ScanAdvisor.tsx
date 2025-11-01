@@ -3,7 +3,7 @@ import { Box, Button, Typography, Fade } from "@mui/material";
 
 const Step1ScanAdvisor: React.FC<{
   onNext: (advisor: any, nextAction?: "purchase" | "scan") => void;
-}> = ({ onNext }) => {
+}> = ({ onNext,setPage }) => {
   const [scanned, setScanned] = useState(false);
   const [advisor, setAdvisor] = useState<{ name: string; id: string } | null>(
     null
@@ -92,7 +92,7 @@ const Step1ScanAdvisor: React.FC<{
                 color="primary"
                 size="large"
                 sx={{ px: 6, py: 2, fontSize: 20, fontWeight: 700 }}
-                onClick={() => onNext(advisor, "purchase")}
+                onClick={() => setPage("orders")}
               >
                 Go to Purchase Orders
               </Button>

@@ -1,0 +1,2 @@
+all:
+	pake http://127.0.0.1:3000 --name "Jewelry-Buying" --icon ./buying-app.png

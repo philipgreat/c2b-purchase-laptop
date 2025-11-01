@@ -5,38 +5,14 @@ import { Box, Button, TextField, Typography } from "@mui/material";
 function numberToWords(amount: number): string {
   if (isNaN(amount)) return "";
   const ones = [
-    "",
-    "One",
-    "Two",
-    "Three",
-    "Four",
-    "Five",
-    "Six",
-    "Seven",
-    "Eight",
-    "Nine",
-    "Ten",
-    "Eleven",
-    "Twelve",
-    "Thirteen",
-    "Fourteen",
-    "Fifteen",
-    "Sixteen",
-    "Seventeen",
-    "Eighteen",
-    "Nineteen",
+    "", "One", "Two", "Three", "Four", "Five",
+    "Six", "Seven", "Eight", "Nine", "Ten",
+    "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen",
+    "Sixteen", "Seventeen", "Eighteen", "Nineteen",
   ];
   const tens = [
-    "",
-    "",
-    "Twenty",
-    "Thirty",
-    "Forty",
-    "Fifty",
-    "Sixty",
-    "Seventy",
-    "Eighty",
-    "Ninety",
+    "", "", "Twenty", "Thirty", "Forty",
+    "Fifty", "Sixty", "Seventy", "Eighty", "Ninety",
   ];
 
   function convertChunk(num: number): string {
@@ -63,10 +39,12 @@ function numberToWords(amount: number): string {
   let remaining = dollars;
   while (remaining > 0) {
     const chunk = remaining % 1000;
-    if (chunk > 0) chunks.unshift(convertChunk(chunk) + (units[i] ? " " + units[i] : ""));
+    if (chunk > 0)
+      chunks.unshift(convertChunk(chunk) + (units[i] ? " " + units[i] : ""));
     remaining = Math.floor(remaining / 1000);
     i++;
   }
+
   const dollarText = chunks.join(" ").trim() || "Zero";
   const centText = cents > 0 ? `and ${cents}/100` : "and 00/100";
   return `${dollarText} ${centText} Dollars`;
@@ -79,6 +57,9 @@ const Step3ProductInfo: React.FC<{ onNext: (product: any) => void }> = ({
     name: "Tiffy Diamond",
     date: "2021-10",
     price: "123123.00",
+    mobile: "",
+    email: "",
+    notes: "",
   });
   const [checkText, setCheckText] = useState("");
 
@@ -98,16 +79,21 @@ const Step3ProductInfo: React.FC<{ onNext: (product: any) => void }> = ({
         Step 3: Enter Product Information
       </Typography>
 
-      <Box display="flex" flexDirection="column" gap={3} maxWidth={600}>
+      {/* First row — product fields */}
+      <Box
+        display="flex"
+        flexDirection="row"
+        gap={3}
+        alignItems="center"
+        justifyContent="space-between"
+        sx={{ width: "100%", maxWidth: 1000, mt: 2 }}
+      >
         <TextField
           label="Product Name"
           value={product.name}
-          InputProps={{
-            sx: { fontSize: 22, fontWeight: 600, py: 2 },
-          }}
-          InputLabelProps={{
-            sx: { fontSize: 18, fontWeight: 500 },
-          }}
+          fullWidth
+          InputProps={{ sx: { fontSize: 22, fontWeight: 600, py: 2 } }}
+          InputLabelProps={{ sx: { fontSize: 18, fontWeight: 500 } }}
           onChange={(e) => setProduct({ ...product, name: e.target.value })}
         />
 
@@ -115,12 +101,9 @@ const Step3ProductInfo: React.FC<{ onNext: (product: any) => void }> = ({
           label="Manufacture Date"
           type="month"
           value={product.date}
-          InputProps={{
-            sx: { fontSize: 22, fontWeight: 600, py: 2 },
-          }}
-          InputLabelProps={{
-            sx: { fontSize: 18, fontWeight: 500 },
-          }}
+          fullWidth
+          InputProps={{ sx: { fontSize: 22, fontWeight: 600, py: 2 } }}
+          InputLabelProps={{ sx: { fontSize: 18, fontWeight: 500 } }}
           onChange={(e) => setProduct({ ...product, date: e.target.value })}
         />
 
@@ -128,13 +111,51 @@ const Step3ProductInfo: React.FC<{ onNext: (product: any) => void }> = ({
           label="Price"
           type="number"
           value={product.price}
-          InputProps={{
-            sx: { fontSize: 22, fontWeight: 700, py: 2 },
-          }}
-          InputLabelProps={{
-            sx: { fontSize: 18, fontWeight: 500 },
-          }}
+          fullWidth
+          InputProps={{ sx: { fontSize: 22, fontWeight: 700, py: 2 } }}
+          InputLabelProps={{ sx: { fontSize: 18, fontWeight: 500 } }}
           onChange={(e) => setProduct({ ...product, price: e.target.value })}
+        />
+      </Box>
+
+      {/* Second row — contact fields */}
+      <Box
+        display="flex"
+        flexDirection="row"
+        gap={3}
+        alignItems="center"
+        justifyContent="space-between"
+        sx={{ width: "100%", maxWidth: 1000, mt: 3 }}
+      >
+        <TextField
+          label="Mobile Phone"
+          placeholder="(555) 123-4567"
+          value={product.mobile}
+          fullWidth
+          InputProps={{ sx: { fontSize: 22, fontWeight: 600, py: 2 } }}
+          InputLabelProps={{ sx: { fontSize: 18, fontWeight: 500 } }}
+          onChange={(e) => setProduct({ ...product, mobile: e.target.value })}
+        />
+
+        <TextField
+          label="Email (optional)"
+          type="email"
+          placeholder="customer@email.com"
+          value={product.email}
+          fullWidth
+          InputProps={{ sx: { fontSize: 22, fontWeight: 600, py: 2 } }}
+          InputLabelProps={{ sx: { fontSize: 18, fontWeight: 500 } }}
+          onChange={(e) => setProduct({ ...product, email: e.target.value })}
+        />
+
+        <TextField
+          label="Notes"
+          placeholder="e.g., Slight scratch on clasp"
+          value={product.notes}
+          fullWidth
+          InputProps={{ sx: { fontSize: 22, fontWeight: 600, py: 2 } }}
+          InputLabelProps={{ sx: { fontSize: 18, fontWeight: 500 } }}
+          onChange={(e) => setProduct({ ...product, notes: e.target.value })}
         />
       </Box>
 

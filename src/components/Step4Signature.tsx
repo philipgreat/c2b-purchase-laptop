@@ -6,11 +6,9 @@ const Step4Signature: React.FC<{ onNext: (sig: string) => void }> = ({
 }) => (
   <Box>
     <Typography variant="h2" gutterBottom>
-      Step 4: Customer Signature
+      Step 4: Confirm Purchase Order
     </Typography>
-    <Typography variant="body1" sx={{ mb: 2 }}>
-      Please have the customer sign below.
-    </Typography>
+    
 
 <PurchaseOrderPage/>
 
@@ -18,7 +16,17 @@ const Step4Signature: React.FC<{ onNext: (sig: string) => void }> = ({
    
 
 
-    <Button variant="contained" onClick={() => onNext("signature-data")}>
+    <Button variant="contained"
+    
+    sx={{
+          mt: 5,
+          px: 4,
+          py: 2,
+          fontSize: 18,
+          fontWeight: 700,
+        }}
+        
+    onClick={() => onNext("signature-data")}>
       Simulate Signature Complete
     </Button>
   </Box>

@@ -49,7 +49,7 @@ const PurchaseOrderCard: React.FC<{ order: PurchaseOrder }> = ({ order }) => {
       sx={{
         borderRadius: 3,
         border: "1px solid #ddd",
-        maxWidth: 900,
+        maxWidth: "90vw",
         mx: "auto",
         overflow: "hidden",
       }}
@@ -148,16 +148,13 @@ const PurchaseOrderCard: React.FC<{ order: PurchaseOrder }> = ({ order }) => {
               <Grid size={{ xs: 12, sm: 6 }}>
                 
                 <Typography variant="h6" fontWeight={600}>
-                  {item.name}
+                  {item.name}@ {item.manufactureDate}           
                 </Typography>
               </Grid>
 
-              <Grid item xs={12} sm={3}>
-                
-                <Typography variant="body2">{item.manufactureDate}</Typography>
-              </Grid>
 
-              <Grid item xs={12} sm={3}>
+
+              <Grid size={{ xs: 12, sm: 3 }}>
                 
                 <Typography variant="h6" color="success.main" fontWeight={700}>
                   ${item.price.toLocaleString()}

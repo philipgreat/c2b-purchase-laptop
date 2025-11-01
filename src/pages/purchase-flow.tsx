@@ -91,7 +91,7 @@ const CustomStepIcon = (props: StepIconProps) => {
 // ----------------------
 // Main Component
 // ----------------------
-const PurchaseFlow: React.FC = () => {
+const PurchaseFlow: React.FC = ({setPage}) => {
   const [activeStep, setActiveStep] = useState(0);
   const [formData, setFormData] = useState<any>({});
 
@@ -105,7 +105,7 @@ const PurchaseFlow: React.FC = () => {
   const StepContent = () => {
     switch (activeStep) {
       case 0:
-        return <Step1ScanAdvisor onNext={(advisor) => handleNext({ advisor })} />;
+        return <Step1ScanAdvisor setPage={setPage} onNext={(advisor) => handleNext({ advisor })} />;
       case 1:
         return <Step2ScanLicense onNext={(customer) => handleNext({ customer })} />;
       case 2:
