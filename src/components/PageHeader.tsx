@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Typography, Button } from "@mui/material";
 import LogoutIcon from "@mui/icons-material/Logout";
 
-const PageHeader = ({setPage}) => (
+const PageHeader = ({setPage,text}) => (
   <Box
     display="flex"
     justifyContent="space-between"
@@ -10,7 +10,7 @@ const PageHeader = ({setPage}) => (
     sx={{ mb: 4 }}
   >
     <Typography variant="h4" fontWeight={700}>
-      Purchase Orders
+     {text}
     </Typography>
 
     <Button
@@ -20,7 +20,7 @@ const PageHeader = ({setPage}) => (
       sx={{ fontWeight: 700 }}
       onClick={() =>setPage("purchase")}
     >
-      Back to Purchase
+      Continue
     </Button>
   </Box>
 );

@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Button, Paper, Typography } from "@mui/material";
 import USCheck from "./USCheck";
-import CheckLayout from './CheckLayout'
+import CheckLayout from "./CheckLayout";
 const Step5Review: React.FC<{ data: any; onNext: () => void }> = ({
   data,
   onNext,
@@ -11,8 +11,7 @@ const Step5Review: React.FC<{ data: any; onNext: () => void }> = ({
       Step 5: Prepare Check
     </Typography>
 
-
-<CheckLayout
+    <CheckLayout
       bankName="Chase Bank"
       date="Oct 31, 2025"
       payee="Emily Carter"
@@ -22,19 +21,18 @@ const Step5Review: React.FC<{ data: any; onNext: () => void }> = ({
       signerName="Philip Zhang"
     />
 
-
-    <Button variant="contained" 
-    
-    sx={{
-          mt: 5,
-          px: 4,
-          py: 2,
-          fontSize: 18,
-          fontWeight: 700,
-        }}
-    
-    onClick={onNext}>
-      Confirm and Print Check
+    <Button
+      variant="contained"
+      sx={{
+        mt: 5,
+        px: 4,
+        py: 2,
+        fontSize: 18,
+        fontWeight: 700,
+      }}
+      onClick={onNext}
+    >
+      Next
     </Button>
   </Box>
 );

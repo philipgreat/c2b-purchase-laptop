@@ -94,7 +94,17 @@ const Step1ScanAdvisor: React.FC<{
                 sx={{ px: 6, py: 2, fontSize: 20, fontWeight: 700 }}
                 onClick={() => setPage("orders")}
               >
-                Go to Purchase Orders
+                 Orders
+              </Button>
+
+               <Button
+                variant="outlined"
+                color="primary"
+                size="large"
+                sx={{ px: 6, py: 2, fontSize: 20, fontWeight: 700 }}
+                onClick={() => setPage("setting")}
+              >
+                Setting
               </Button>
             </Box>
           </Box>

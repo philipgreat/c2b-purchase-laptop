@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Check PDF with Custom MICR Font</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <button id="generateCheck">Generate Check PDF</button>
+
+    <script>
+        document.getElementById('generateCheck').addEventListener('click', function() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            const micrFontBase64="";
+
+            // Add the custom MICR font to jsPDF
+            doc.addFileToVFS("MICREnc.ttf", micrFontBase64);
+            doc.addFont("MICREnc.ttf", "MICR", "normal");
+
+            // Set font to MICR
+            doc.setFont("MICR");
+
+            // Set font size
+            
+            doc.setFontSize(20);
+            // Check Information
+            doc.text('Pay to the order of: John Doe', 20, 40);
+            doc.text('Amount: $1,000.00', 20, 50);
+
+            // Bank Information
+            doc.text('Bank Name: XYZ Bank', 20, 60);
+
+            // Date
+            doc.text('Date: 11/01/2025', 150, 60);
+
+            // Signature Line
+            doc.text('Signature: ____________________', 20, 80);
+
+            // Optional MICR line (using the custom font)
+            doc.setFont("MICR");
+            doc.text('MICR: 123456789 1234 56789012345', 20, 90);
+
+            // Save PDF
+            doc.save('check_example_with_micr_font.pdf');
+        });
+    </script>
+</body>
+</html>

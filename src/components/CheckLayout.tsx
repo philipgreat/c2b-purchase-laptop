@@ -25,14 +25,14 @@ const CheckTemplate = () => {
     >
       {/* Top Row: Name and Check Number */}
       <Grid container justifyContent="space-between" alignItems="flex-start">
-        <Grid item size={{ xs: 6 }}>
+        <Grid  size={{ xs: 6 }}>
           <Typography variant="body1" fontWeight="bold">
             JOHN CLAW
           </Typography>
           <Typography variant="body2">A.B. BOX 123</Typography>
           <Typography variant="body2">LOREM SPRING, 123456</Typography>
         </Grid>
-        <Grid item size={{ xs: 6 }} textAlign="right">
+        <Grid  size={{ xs: 6 }} textAlign="right">
           <Typography variant="body2">
             No. <b>8741</b>
           </Typography>
@@ -110,11 +110,11 @@ const CheckTemplate = () => {
 
       {/* Memo and Signature */}
       <Grid container justifyContent="space-between" alignItems="flex-end" mt={3}>
-        <Grid item size={{ xs: 5 }}>
+        <Grid  size={{ xs: 5 }}>
           <Typography variant="body2">MEMO</Typography>
           <TextField fullWidth variant="standard" placeholder="Memo Line" />
         </Grid>
-        <Grid item size={{ xs: 5 }}>
+        <Grid  size={{ xs: 5 }}>
           <Typography variant="body2" align="right">
             Signature
           </Typography>

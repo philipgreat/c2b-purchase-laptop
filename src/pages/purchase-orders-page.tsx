@@ -77,7 +77,7 @@ const PurchaseOrdersPage: React.FC<{ setPage: (page: string) => void }> = ({
 
   return (
     <Box sx={{ p: 5 }}>
-      <PageHeader setPage={setPage} />
+      <PageHeader text="Purchase Orders" setPage={setPage} />
 
       {/* 搜索区域 */}
       <Paper sx={{ p: 3, mb: 4 }}>

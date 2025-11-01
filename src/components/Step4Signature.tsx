@@ -25,11 +25,12 @@ const Step4Signature: React.FC<{ onNext: (sig: string) => void }> = ({
           fontSize: 18,
           fontWeight: 700,
         }}
-        
+
     onClick={() => onNext("signature-data")}>
-      Simulate Signature Complete
+     Next
     </Button>
   </Box>
 );
 
 export default Step4Signature;
+
