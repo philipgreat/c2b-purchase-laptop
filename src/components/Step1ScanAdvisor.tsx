@@ -3,6 +3,8 @@ import { Box, Button, Typography, Fade } from "@mui/material";
 
 const Step1ScanAdvisor: React.FC<{
   onNext: (advisor: any, nextAction?: "purchase" | "scan") => void;
+  setPage:(page:string)=>void
+  
 }> = ({ onNext,setPage }) => {
   const [scanned, setScanned] = useState(false);
   const [advisor, setAdvisor] = useState<{ name: string; id: string } | null>(
@@ -49,29 +51,32 @@ const Step1ScanAdvisor: React.FC<{
             >
               Waiting for QR code scan...
             </Typography>
-            <Typography variant="h6" color="text.secondary">
+            {/* <Typography variant="h6" color="text.secondary">
               (Press any key to simulate QR scan)
-            </Typography>
+            </Typography> */}
           </Box>
         </Fade>
       ) : (
         <Fade in timeout={600}>
           <Box>
+            {/* <Typography
+              variant="h2"
+              fontWeight={700}
+              color="primary"
+              gutterBottom
+            >
+              {advisor?.name}!
+            </Typography> */}
+
             <Typography
               variant="h2"
               fontWeight={700}
               color="primary"
               gutterBottom
             >
-              Hello, {advisor?.name}!
+              Select A Function
             </Typography>
-            <Typography
-              variant="h4"
-              sx={{ fontWeight: 600, mb: 5 }}
-              color="text.secondary"
-            >
-              Employee ID: {advisor?.id}
-            </Typography>
+           
 
             <Box display="flex" gap={4} justifyContent="center">
              

@@ -39,13 +39,10 @@ const CheckTemplate = () => {
           <TextField
             variant="standard"
             placeholder="Date"
+            value="Nov 1st, 2025"
             InputProps={{
               disableUnderline: true,
-              endAdornment: (
-                <InputAdornment position="end">
-                  20__
-                </InputAdornment>
-              ),
+             
               sx: { fontSize: '0.9rem' },
             }}
           />
@@ -59,14 +56,25 @@ const CheckTemplate = () => {
         </Typography>
         <Grid container spacing={2}>
           <Grid  size={{ xs: 9 }}>
-            <TextField fullWidth variant="standard" placeholder="Payee Name" />
+            <TextField fullWidth variant="standard" placeholder="Payee Name" 
+            value="Helen White"
+             InputProps={{
+              sx: { fontSize: 22, fontWeight: 600, py: 2 } ,
+                  
+                }}
+            
+            />
           </Grid>
+          {/* InputProps={{ sx: { fontSize: 22, fontWeight: 600, py: 2 } }} */}
           <Grid  size={{ xs: 3 }}>
             <TextField
               fullWidth
+              value="12400.00"
               variant="standard"
               placeholder="Amount"
+              
               InputProps={{
+                sx: { fontSize: 22, fontWeight: 600, py: 2 } ,
                 startAdornment: (
                   <InputAdornment position="start">$</InputAdornment>
                 ),
@@ -81,11 +89,12 @@ const CheckTemplate = () => {
         <TextField
           fullWidth
           variant="standard"
+          
+          value="Twelve Thousand Four Hundred and 00/100 DOLLARS"
           placeholder="Amount in Words"
           InputProps={{
-                endAdornment: (
-                  <InputAdornment position="start">Dollars</InputAdornment>
-                ),
+            sx: { fontSize: 22, fontWeight: 600, py: 2 } ,
+               
               }}
         />
       </Box>
@@ -112,7 +121,11 @@ const CheckTemplate = () => {
       <Grid container justifyContent="space-between" alignItems="flex-end" mt={3}>
         <Grid  size={{ xs: 5 }}>
           <Typography variant="body2">MEMO</Typography>
-          <TextField fullWidth variant="standard" placeholder="Memo Line" />
+          <TextField fullWidth variant="standard" placeholder="Memo Line" 
+          
+          value="Order#1052 Tiffany & Co. Bubble Diamond Drop Necklace"
+          
+          />
         </Grid>
         <Grid  size={{ xs: 5 }}>
           <Typography variant="body2" align="right">

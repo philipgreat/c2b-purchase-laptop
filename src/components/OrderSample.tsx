@@ -6,13 +6,13 @@ const orderExample: PurchaseOrder = {
   id: 1052,
   timestamp: "2025-10-31T15:45:00Z",
   buyer: {
-    name: "Carter Store",
+    name: "Carter Lee",
     email: "jane.carter@example.com",
     address: "742 Evergreen Terrace, Springfield, CA 90032",
   },
   seller: {
     name: "Helen White",
-    email: "hellen-w@gmail.com",
+    email: "hellen-white@gmai.com",
     address: "101 Wall Stree, New York, NY 12303",
   },
   items: [

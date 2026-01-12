@@ -154,7 +154,7 @@ const PurchaseOrderCard: React.FC<{ order: PurchaseOrder }> = ({ order }) => {
 
 
 
-              <Grid size={{ xs: 12, sm: 3 }}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 
                 <Typography variant="h6" color="success.main" fontWeight={700}>
                   ${item.price.toLocaleString()}
@@ -176,19 +176,7 @@ const PurchaseOrderCard: React.FC<{ order: PurchaseOrder }> = ({ order }) => {
 
         <Divider sx={{ my: 3 }} />
 
-        {/* Totals */}
-        <Stack direction="row" justifyContent="flex-end" spacing={2}>
-          <Typography variant="h6" fontWeight={700}>
-            Total:
-          </Typography>
-          <Typography
-            variant="h5"
-            fontWeight={800}
-            color="success.main"
-          >
-            ${total.toLocaleString(undefined, { minimumFractionDigits: 2 })}
-          </Typography>
-        </Stack>
+        
 
         {/* Signature */}
 
@@ -213,6 +201,29 @@ const PurchaseOrderCard: React.FC<{ order: PurchaseOrder }> = ({ order }) => {
     }}
   >
     {order.seller.name}
+  </Typography>
+</Box>
+
+ <Typography variant="h5" fontWeight={700} sx={{ mb: 2 }}>
+          Buyer Signature
+        </Typography>
+
+       
+
+
+    <Box sx={{ position: 'relative', height: 200, border: '1px solid #ccc',        border: "1px dashed gray",
+        
+        backgroundColor: "#fafafa", }}>
+  <Typography
+    sx={{
+      position: 'absolute',
+      bottom: 0,
+      right: 10,
+      textAlign: 'right',
+      mb: 2,
+    }}
+  >
+    {order.buyer.name}
   </Typography>
 </Box>
 

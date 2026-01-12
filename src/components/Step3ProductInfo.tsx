@@ -53,13 +53,14 @@ function numberToWords(amount: number): string {
 const Step3ProductInfo: React.FC<{ onNext: (product: any) => void }> = ({
   onNext,
 }) => {
+  
   const [product, setProduct] = useState({
-    name: "Tiffy Diamond",
+    name: "Tiffany & Co. Bubble Diamond Drop Necklace",
     date: "2021-10",
-    price: "123123.00",
-    mobile: "",
-    email: "",
-    notes: "",
+    price: "12400.00",
+    mobile: "310-123-1234",
+    email: "hellen-white@gmai.com",
+    notes: "Original pacakge",
   });
   const [checkText, setCheckText] = useState("");
 
@@ -128,7 +129,7 @@ const Step3ProductInfo: React.FC<{ onNext: (product: any) => void }> = ({
         sx={{ width: "100%", maxWidth: 1000, mt: 3 }}
       >
         <TextField
-          label="Mobile Phone"
+          label="Seller Mobile Phone"
           placeholder="(555) 123-4567"
           value={product.mobile}
           fullWidth
@@ -138,7 +139,7 @@ const Step3ProductInfo: React.FC<{ onNext: (product: any) => void }> = ({
         />
 
         <TextField
-          label="Email (optional)"
+          label="Seller Email (optional)"
           type="email"
           placeholder="customer@email.com"
           value={product.email}

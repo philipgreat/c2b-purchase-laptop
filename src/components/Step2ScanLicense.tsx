@@ -13,7 +13,7 @@ const Step2ScanLicense: React.FC<{ onNext: (customer: any) => void }> = ({
   onNext,
 }) => {
   const [customer, setCustomer] = useState({
-    fullName: "Jane Elizabeth Carter",
+    fullName: "Hellen White",
     dateOfBirth: "1988-07-12",
     licenseNumber: "C1234567",
     issuingState: "CA",
